@@ -9,75 +9,77 @@
 </head>
 <body>
     <div class="container">
-        <div class="register">
-            <div>
-                {% with messages = get_flashed_messages(category_filter=['register']) %}
-                    {% if messages %}
-                    <div>
-                        {% for message in messages %}
-                            <p class="invalid">{{message}}</p>
-                        {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
-            </div>
-            <p class="links"><a href="/">Go Back</a></p>
-            <div class="form">
-                <form action="/signup" method="POST">
-                    <h1 class="new">New User</h1>
-                    <p>
-                        <label for="username">Username:</label>
-                        <input type="text" name="username">
-                    </p>
-                    <p>
-                        <label for="first_name">First Name:</label>
-                        <input type="text" name="first_name">
-                    </p>
-                    <p>
-                        <label for="last_name">Last Name:</label>
-                        <input type="text" name="last_name">
-                    </p>
-                    <p>
-                        <label for="email" >Email:</label>
-                        <input type="text" name="email">
-                    </p>
-                    <p>
-                        <label for="password" >Password:</label>
-                        <input type="password" name="password">
-                    </p>
-                    <p>
-                        <label for="confirm_password" >Confirm Password:</label>
-                        <input type="password" name="confirm">
-                    </p>
-                    <input type="submit" class="signup" value="Sign Up!">
-                </form>
-            </div>
-        </div>
-        <div class="login">
-            <div>
-                {% with messages = get_flashed_messages(category_filter=['login']) %}
-                    {% if messages %}
+        <div class="signin">
+            <div class="register">
+                <div>
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% if messages %}
                         <div>
-                        {% for message in messages %}
-                            <p class="invalid">{{message}}</p>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                {% endwith %}
+                            {% for message in messages %}
+                                <p class="invalid">{{message}}</p>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <p class="links"><a href="/">Go Back</a></p>
+                <div class="form">
+                    <form action="/signup" method="POST">
+                        <h1 class="new">New User</h1>
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username">
+                        </p>
+                        <p>
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name">
+                        </p>
+                        <p>
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name">
+                        </p>
+                        <p>
+                            <label for="email" >Email:</label>
+                            <input type="text" name="email">
+                        </p>
+                        <p>
+                            <label for="password" >Password:</label>
+                            <input type="password" name="password">
+                        </p>
+                        <p>
+                            <label for="confirm_password" >Confirm Password:</label>
+                            <input type="password" name="confirm">
+                        </p>
+                        <input type="submit" class="signup" value="Sign Up!">
+                    </form>
+                </div>
             </div>
-            <div class="form">
-                <form action="/login" method="POST">
-                    <h1 class="return">Returning User</h1>
-                    <div>
-                        <label for="email" >Email:</label>
-                        <input type="text" name="email">
-                    </div>
-                    <div>
-                        <label for="password" >Password:</label>
-                        <input type="password" name="password">
-                    </div>
-                    <input type="submit" class="enter" value="Login">
-                </form>
+            <div class="login">
+                <div>
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {% if messages %}
+                            <div>
+                            {% for message in messages %}
+                                <p class="invalid">{{message}}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="form">
+                    <form action="/login" method="POST">
+                        <h1 class="return">Returning User</h1>
+                        <div>
+                            <label for="email" >Email:</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div>
+                            <label for="password" >Password:</label>
+                            <input type="password" name="password">
+                        </div>
+                        <input type="submit" class="enter" value="Login">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

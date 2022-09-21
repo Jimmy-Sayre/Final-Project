@@ -1,5 +1,6 @@
 .container, #page-container{
-    background-color: tan;
+    background-color: White;
+    height:300px;
 }
 
 .logout, .invalid{
@@ -7,9 +8,15 @@
 }
 
 
-.register, .login, .new, .return{
-    background-color:tan;
+.signin, .register, .login, .new, .return{
+    display:flex;
+    justify-content: center;
+    background-color:white;
     color:black;
+}
+
+.signin {
+    margin:200px;
 }
 
 .form{
@@ -28,7 +35,7 @@ width: 200px;
 
 .pictures {
     display: inline;
-    height: 150px;
+    height: 50px;
     width: 200px;
 }
 .header, .create, .welcome {
@@ -43,6 +50,10 @@ width: 200px;
 }
 
 .content {
-    flex:flex;
+    display:flex;
     justify-content: space-around;
+}
+
+.info {
+    height:100px;
 }
