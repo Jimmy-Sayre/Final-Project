@@ -4,64 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Document</title>
 </head>
 <body>
-    <div class="top-nav">
-        <div class="header">
-            <h1>Edit Instruments</h1>
+    <div class="container">
+        <div class="top-nav">
+            <div class="header">
+                <h1>Edit Instruments</h1>
+            </div>
+            <div class="links">
+                <a class="click" href="/home">Home</a> ||
+                <a class="click" href="/logout">Logout</a>
+            </div>
         </div>
-        <div class="links">
-            <a class="click" href="#">Home</a>
-            <a class="click" href="#">Logout</a>
-        </div>
-    </div>
-    <div class="insruments">
-        <h3>Musicians ready to jam!</h3>
-        <table class="table">
-            <thead class="table">
-                <tr>
-                    <th class="table">Instrument</th>
-                    <th class="table">Years of Experience</th>
-                    <th class="table">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for user in userss %}
+        <div class="insruments">
+            <h3>Musicians ready to jam!</h3>
+            <table class="table">
+                <thead class="table">
+                    <tr>
+                        <th class="table">Instrument</th>
+                        <th class="table">Years of Experience</th>
+                        <th class="table">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in userss %}
 
-                <tr>
-                    <td class="table">{{user.username}}</td>
-                    <td class="table">{{user.state}}</td>
-                    <td class="table">{{user.instrument}}</td>
-                    <td class="table"><a href="/delete/{{ car.id }}">Delete</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <p>
-            <form action="/update/instruments" method="post" class="form"></form>
-                <select name="instrument" id="instrument" value="{{user.instrument}}">
-                    <option value="select">Select An Instrument</option>
-                    <option value="guitar">Guitar</option>
-                    <option value="bass_guitar">Bass guitar</option>
-                    <option value="drums">Drums</option>
-                    <option value="trumpet">Trumpet</option>
-                    <option value="trombone">Trombone</option>
-                    <option value="saxophone">Saxophone</option>
-                    <option value="piano">Piano</option>
-                </select>
-                <select name="years" id="years" value="{{user.years}}">
-                    <option value="years">Years Of Experience</option>
-                    <option value="0-1">0-1</option>
-                    <option value="1-2">1-2</option>
-                    <option value="2-3">2-3</option>
-                    <option value="3-4">3-4</option>
-                    <option value="4-5">4-5</option>
-                    <option value="5+">5+</option>
-                </select>
-                <a href="#">Add Instrument</a>
-            </form>
-        </p>
+                    <tr>
+                        <td class="table">{{instrument.user}}</td>
+                        <td class="table">{{instruments.years}}</td>
+                        <td class="table"><a href="/delete/{{ car.id }}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p>
+                <form action="/update/instruments" method="post" class="form"></form>
+                    <select name="instrument" id="instrument" value="{{instrument.user}}">
+                        <option value="select">Select An Instrument</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="bass_guitar">Bass guitar</option>
+                        <option value="drums">Drums</option>
+                        <option value="trumpet">Trumpet</option>
+                        <option value="trombone">Trombone</option>
+                        <option value="saxophone">Saxophone</option>
+                        <option value="piano">Piano</option>
+                    </select>
+                    <select name="years" id="years" value="{{instrument.years}}">
+                        <option value="years">Years Of Experience</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="submit" value="Add Instrument">
+                </form>
+            </p>
+        </div>
     </div>
 </body>
 </html>

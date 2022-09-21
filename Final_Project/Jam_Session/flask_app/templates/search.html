@@ -8,10 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="carlist">
+    <div class="container">
         <div class="welcome">
             <h1 class="hello">Find a Jam Buddy!</h1>
-            <p class="links"><a href="/logout">Logout</a></p>
+        </div>
+        <div class="links">
+            <a class="click" href="/home">Home</a> ||
+            <a class="click" href="/logout">Logout</a>
         </div>
         <h3>Musicians ready to jam!</h3>
         <table class="table">
@@ -22,20 +25,18 @@
                     <th class="table">Instrument</th>
                     <th class="table">Years of Experience</th>
                     <th class="table">Actions</th>
-                    <th class="table">Likes</th>
                 </tr>
             </thead>
             <tbody>
-                {% for car in cars %}
+                {% for user in users %}
 
                 <tr>
                     <td class="table">{{user.username}}</td>
                     <td class="table">{{user.state}}</td>
-                    <td class="table">{{user.instrument}}</td>
-                    <td class="table">{{user.years}}</td>
-                    <td class="table"><a href="/show/{{ car.id }}">View</a>
+                    <td class="table"></td>
+                    <td class="table"></td>
+                    <td class="table"><a href="/show/{{ user.id }}">View</a>
                         <a href="/edit/{{ car.id }}">Message</a> <a href="/delete/{{ car.id }}">Like</a></td>
-                    <td class="table">Like Count</td>
                     
                 </tr>
                 {% endfor %}

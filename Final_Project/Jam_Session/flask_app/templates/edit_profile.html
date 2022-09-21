@@ -8,64 +8,69 @@
     <title>Document</title>
 </head>
 <body>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <p class="invalid">{{message}}</p>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-    <div class="header">
-    <h1>Edit {{user.username}} Info</h1>
-    <a href="/home">Home</a>
-    <a href="/logout">Logout</a>
-    </div>
-    <div class="left-side">
-        <form action="/update/user/{{ user.id }}" method="post" class="form">
-            <p><label for="username">Username:</label>
-            <input type="text" name="username" value="{{user.username}}"></p>
-            <p><label for="first_name">First Name:</label>
-            <input type="text" name="first_name" value="{{user.first_name}}">
-            Make Public:
-            <input type="radio" id="yes" name="public" value="yes">
-            <label for="first_name">Yes</label>
-            <input type="radio" id="no" name="public" value="no">
-            <label for="first_name">No</label></p>
-            <p><label for="last_name">Last Name:</label>
-            <input type="text" name="last_name" value="{{user.last_name}}">
-            Make Public:
-            <input type="radio" id="yes" name="public" value="yes">
-            <label for="last_name">Yes</label>
-            <input type="radio" id="no" name="public" value="no">
-            <label for="last_name">No</label></p>
-            <p><label for="email">Email:</label>
-            <input type="text" name="email" value="{{user.email}}">
-            Make Public:
-            <input type="radio" id="yes" name="public" value="yes">
-            <label for="email">Yes</label>
-            <input type="radio" id="no" name="public" value="no">
-            <label for="email">No</label></p>
-            <label for="state">State:</label>
-            <select name="state" id="state" value="{{user.state}}">
-                <option value="NJ">NJ</option>
-                <option value="NY">NY</option>
-                <option value="PA">PA</option>
-            </select>
-            <p><label for="zip_code">Zip Code:</label>
-            <input type="number" name="zip_code" value="{{user.zip_code}}">
-            Make Public:
-            <input type="radio" id="yes" name="public" value="yes">
-            <label for="zip_code">Yes</label>
-            <input type="radio" id="no" name="public" value="no">
-            <label for="zip_code">No</label></p>
-            <input type="submit" value="Update">
-        </form>
-    </div>
-    <div class="right-side">
-        <p>Change Profile Picture:</p>
-        <textarea name="Message" cols="20" rows="5">
-        </textarea>
-        <p><input type="submit" name="submit" value="Change Picture"></p>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="invalid">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="header">
+        <h1>Edit {{user.username}} Info</h1>
+        </div>
+        <div class="links">
+        <a class="click" href="/home">Home</a> ||
+        <a class="click" href="/logout">Logout</a> || 
+        <a class="click" href="/delete/{{ user.id }}">Delete Pofile</a>
+        </div>
+        <div class="left-side">
+            <form action="/update/user/{{ user.id }}" method="post" class="form">
+                <p><label for="username">Username:</label>
+                <input type="text" name="username" value="{{user.username}}"></p>
+                <p><label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{user.first_name}}">
+                Make Public:
+                <input type="radio" id="yes" name="public" value="yes">
+                <label for="first_name">Yes</label>
+                <input type="radio" id="no" name="public" value="no">
+                <label for="first_name">No</label></p>
+                <p><label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{user.last_name}}">
+                Make Public:
+                <input type="radio" id="yes" name="public" value="yes">
+                <label for="last_name">Yes</label>
+                <input type="radio" id="no" name="public" value="no">
+                <label for="last_name">No</label></p>
+                <p><label for="email">Email:</label>
+                <input type="text" name="email" value="{{user.email}}">
+                Make Public:
+                <input type="radio" id="yes" name="public" value="yes">
+                <label for="email">Yes</label>
+                <input type="radio" id="no" name="public" value="no">
+                <label for="email">No</label></p>
+                <label for="state">State:</label>
+                <select name="state" id="state" value="{{user.state}}">
+                    <option value="NJ">NJ</option>
+                    <option value="NY">NY</option>
+                    <option value="PA">PA</option>
+                </select>
+                <p><label for="zip_code">Zip Code:</label>
+                <input type="number" name="zip_code" value="{{user.zip_code}}">
+                Make Public:
+                <input type="radio" id="yes" name="public" value="yes">
+                <label for="zip_code">Yes</label>
+                <input type="radio" id="no" name="public" value="no">
+                <label for="zip_code">No</label></p>
+                <input type="submit" value="Update">
+            </form>
+        </div>
+        <div class="right-side">
+            <p>Change Profile Picture:</p>
+            <textarea name="Message" cols="20" rows="5">
+            </textarea>
+            <p><input type="submit" name="submit" value="Change Picture"></p>
+        </div>
     </div>
 </body>
 </html>

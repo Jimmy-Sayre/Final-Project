@@ -41,7 +41,7 @@ def login():
         return redirect('/register')
     if not bcrypt.check_password_hash(user.password, request.form['password']):
         flash("Invalid Password","login")
-        return redirect('/')
+        return redirect('/register')
     session['user_id'] = user.id
     return redirect('/home')
 
@@ -59,6 +59,8 @@ def logout():
 
 @app.route('/update/<int:id>')
 def edit(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
     data ={ 
         "id":id
     }
@@ -66,6 +68,8 @@ def edit(id):
 
 @app.route('/update/user/<int:id>', methods=['POST'])
 def update(id):
+    if 'user_id' not in session:
+        return redirect('/logout')
 
     data = {
         'id' : id,
@@ -83,3 +87,25 @@ def update(id):
 @app.route('/guest')
 def guest():
     return render_template('guest.html', user=User.get_all())
+
+@app.route('/search')
+def search():
+    if 'user_id' not in session:
+        return redirect('/logout')
+    user = User.get_all()
+    return render_template("search.html", user = user )
+
+@app.route('/view/<int:id>')
+def view(id):
+    data = {
+        'id' : id
+    }
+    return render_template('view.html', user = User.get_one(data))
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    data ={
+        'id': id
+    }
+    User.delete_user(data)
+    return redirect('/logout')

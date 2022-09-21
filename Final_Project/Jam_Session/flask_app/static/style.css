@@ -1,6 +1,5 @@
-.container{
-    display:flex;
-    justify-content: center;
+.container, #page-container{
+    background-color: tan;
 }
 
 .logout, .invalid{
@@ -9,8 +8,8 @@
 
 
 .register, .login, .new, .return{
-    background-color:black;
-    color:lightskyblue;
+    background-color:tan;
+    color:black;
 }
 
 .form{
@@ -27,13 +26,23 @@ width: 200px;
     background-color: green;
 }
 
+.pictures {
+    display: inline;
+    height: 150px;
+    width: 200px;
+}
 .header, .create, .welcome {
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     padding:30px;
 }
 
 .table {
     margin:10px;
     padding:10px;
+}
+
+.content {
+    flex:flex;
+    justify-content: space-around;
 }

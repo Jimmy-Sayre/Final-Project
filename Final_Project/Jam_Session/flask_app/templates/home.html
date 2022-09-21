@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Document</title>
 </head>
 <body>
     <div id="page-container">
         <div class="top-nav">
-            <div class="user_picture">
-                <img src="Final_Project\Jam_Session\flask_app\static\pictures\user-circle.png" alt="User Picture">
-            </div>
             <div class="header">
                 <h1>Welcome {{ user.first_name }}</h1>
             </div>
             <div class="links">
-                <a class="click" href="#">Find a Jam Buddy!</a>
+                <a class="click" href="/search">Find a Jam Buddy!</a>
                 <a class="click" href="#">Messages</a>
                 <a class="click" href="/logout">Logout</a>
             </div>
@@ -38,7 +36,7 @@
             <div class="user-info">
                 <p>Instruments: {{ user.instrument }}</p>
             </div>
-            <a href="update/instrument">Edit Instruments</a>
+            <a href="update/instrument/{{ user.id }}">Edit Instruments</a>
         </div>
     </div>
 </body>

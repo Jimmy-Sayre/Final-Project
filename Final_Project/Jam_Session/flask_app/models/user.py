@@ -76,10 +76,15 @@ class User:
 
     @classmethod
     def get_all(cls):
-        query  = "SELECT * FROM users LEFT JOIN instruments ON instruments.user_id = users.id"
+        query  = "SELECT * FROM users JOIN instruments ON instruments.user_id = users.id"
         result = connectToMySQL(db).query_db(query)
         users = []
         
         for user in result:
             users.append(cls(user))
         return users
+
+    @classmethod
+    def delete_user(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s"
+        return connectToMySQL(db).query_db(query, data)

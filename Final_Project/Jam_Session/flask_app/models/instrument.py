@@ -27,7 +27,7 @@ class Instrument:
 
     @classmethod
     def get_instrument(cls, data):
-        query = 'SELECT * FROM instruments JOIN users ON instrument.user_id = users.id WHERE users.id = %(id)s'
+        query = 'SELECT * FROM instruments JOIN users ON instruments.user_id = users.id WHERE users.id = %(id)s'
         results = connectToMySQL(db).query_db(query, data)
         instruments = cls(results[0])
         for row in results:
@@ -37,9 +37,17 @@ class Instrument:
                 'first_name' : row['first_name'],
                 'last_name' : row['last_name'],
                 'email' : row['email'],
+                'state' : row['state'],
                 'password' : row['password'],
+                'zip_code' : row['zip_code'],
                 'created_at' : row['users.created_at'],
                 'updated_at' : row['users.updated_at']
             }
             instruments.user = User(user_data)
         return instruments
+
+    @classmethod
+    def save(cls, data):
+        query="INSERT INTO intruments (instrument, years, user_id) VALUES (%(instrument)s, %(user_id)s)"
+        result = connectToMySQL(db).query_db(query,data)
+        return result
