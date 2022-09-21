@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>{{user.username}} Messages</h1>
+        <a href="/dashboard">Home</a>
+        <a href="#">Find a Jam Buddy!</a>
+        <a href="/logout">Logout</a>
+        </div>
+        <table class="table">
+            <thead class="table">
+                <tr>
+                    <th class="table">From</th>
+                    <th class="table">Message</th>
+                    <th class="table">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars %}
+
+                <tr>
+                    <td class="table">{{user.username}}</td>
+                    <td class="table">{{user.state}}</td>
+                    <td class="table"><a href="/show/{{ car.id }}">View User</a> || <a href="/delete/{{ car.id }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>

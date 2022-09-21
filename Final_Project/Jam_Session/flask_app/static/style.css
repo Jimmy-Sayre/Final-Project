@@ -1,0 +1,39 @@
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+.logout, .invalid{
+    color: red;
+}
+
+
+.register, .login, .new, .return{
+    background-color:black;
+    color:lightskyblue;
+}
+
+.form{
+width: 200px;
+}
+
+.signup{
+    color:white;
+    background-color: blue;
+}
+
+.enter{
+    color:white;
+    background-color: green;
+}
+
+.header, .create, .welcome {
+    display:flex;
+    justify-content: space-between;
+    padding:30px;
+}
+
+.table {
+    margin:10px;
+    padding:10px;
+}

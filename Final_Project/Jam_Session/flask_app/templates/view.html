@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="page-container">
+        <div class="top-nav">
+            <div class="user_picture">
+                <img src="Final_Project\Jam_Session\flask_app\static\pictures\user-circle.png" alt="User Picture">
+            </div>
+            <div class="header">
+                <h1>{{ user.first_name }} Profile</h1>
+            </div>
+            <div class="links">
+                <a class="click" href="#">Home</a>
+                <a class="click" href="#">Find a Jam Buddy!</a>
+                <a class="click" href="#">Logout</a>
+            </div>
+        </div>
+        <div class="left-side">
+            <h3>Profile</h3>
+            <div class="user-info">
+                <p>Username: {{ user.username }}</p>
+                <p>First Name: {{ user.first_name }}</p>
+                <p>Last Name: {{ user.last_name }}</p>
+                <p>Email: {{ user.email }}</p>
+                <p>State: {{ user.state }}</p>
+                <p>Zip Code: {{ user.zip_code }}</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <h3>Send a Message!</h3>
+            <textarea name="Message" cols="20" rows="5">
+            </textarea>
+            <div>
+            <input type="submit" name="submit" value="Let's Jam!">
+        </div>
+    </div>
+</body>
+</html>

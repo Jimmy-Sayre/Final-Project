@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="carlist">
+        <div class="welcome">
+            <h1 class="hello">Find a Jam Buddy By State!</h1>
+            <p class="links"><a href="/logout">Logout</a></p>
+        </div>
+        <h3>Musicians ready to jam!</h3>
+        <table class="table">
+            <thead class="table">
+                <tr>
+                    <th class="table">Username</th>
+                    <th class="table">State</th>
+                    <th class="table">Instrument</th>
+                    <th class="table">Years of Experience</th>
+                    <th class="table">Actions</th>
+                    <th class="table">Likes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars %}
+
+                <tr>
+                    <td class="table">{{user.username}}</td>
+                    <td class="table">{{user.state}}</td>
+                    <td class="table">{{user.instrument}}</td>
+                    <td class="table">{{user.years}}</td>
+                    <td class="table"><a href="/show/{{ car.id }}">View</a>
+                        <a href="/edit/{{ car.id }}">Message</a> <a href="/delete/{{ car.id }}">Like</a></td>
+                    <td class="table">Like Count</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
