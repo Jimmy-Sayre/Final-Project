@@ -1,6 +1,6 @@
 # Final-Project
 
-A webiste where a user can sign up with a username, add info about where they live and what instruments they play.
+A website where a user can sign up with a username, add info about where they live and what instruments they play.
 
 The users can then search for other users within the site to connect and set up a time to jam together.
 
