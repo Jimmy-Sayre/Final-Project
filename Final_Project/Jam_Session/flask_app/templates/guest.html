@@ -8,34 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="carlist">
+    <div class="container">
         <div class="welcome">
-            <h1 class="">Welcome Guest!</h1>
-            <h2>Please log in to see/use full features</h2>
-            <p class="links"><a href="/register">Sign Up/Login!</a></p>
-            <p class="links"><a href="/">Go Back</a></p>
+            <h1>Welcome Guest!</h1>
         </div>
-        <h3>Musicians ready to jam!</h3>
-        <table class="table">
-            <thead class="table">
-                <tr>
-                    <th class="table">State</th>
-                    <th class="table">Instrument</th>
-                    <th class="table">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for user in users %}
+        <div class="signin">
+            <div>
+                <h2>Please log in to see/use full features</h2>
+                <p class="links"><a href="/register">Sign Up/Login!</a></p>
+                <p class="links"><a href="/">Go Back</a></p>
+            </div>
+            <h3>Musicians ready to jam!</h3>
+            <div>
+            <table class="table">
+                <thead class="table">
+                    <tr>
+                        <th class="table">State</th>
+                        <th class="table">Instrument</th>
+                        <th class="table">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
 
-                <tr>
-                    <td class="table">{{user.state}}</td>
-                    <td class="table">{{user.instrument}}</td>
-                    <td class="table"><a href="/signup">Message</a>}</td>
-                    
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                    <tr>
+                        <td class="table">{{user.state}}</td>
+                        <td class="table">{{user.instrument}}</td>
+                        <td class="table"><a href="/signup">Message</a>}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
     </div>
 </body>
 </html>

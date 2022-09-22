@@ -1,8 +1,10 @@
 .container, #page-container{
-    background-color: White;
+    background-color: lightcyan;
     height:300px;
 }
-
+*, .form, .signin {
+    background-color: lightcyan;
+}
 .logout, .invalid{
     color: red;
 }
@@ -11,12 +13,12 @@
 .signin, .register, .login, .new, .return{
     display:flex;
     justify-content: center;
-    background-color:white;
+    background-color:lightcyan;
     color:black;
 }
 
 .signin {
-    margin:200px;
+    margin:100px;
 }
 
 .form{
@@ -34,14 +36,20 @@ width: 200px;
 }
 
 .pictures {
-    display: inline;
+    display: block;
     height: 50px;
     width: 200px;
+}
+img {
+    margin: 40px;
+    height: 150px;
+    width: 150px;
 }
 .header, .create, .welcome {
     display:flex;
     justify-content: center;
     padding:30px;
+    background-color: lightgray;
 }
 
 .table {
@@ -55,5 +63,18 @@ width: 200px;
 }
 
 .info {
-    height:100px;
+    padding:15px;
+    border: 2px solid black;
+}
+
+.jam {
+    font-size: 50px;
+}
+
+.intro-links {
+    margin-top: 20px;
+}
+
+.goback {
+    padding: 40px;
 }

@@ -9,16 +9,13 @@
 </head>
 <body>
     <div id="page-container">
-        <div class="top-nav">
             <div class="header">
                 <h1>Welcome {{ user.first_name }}</h1>
             </div>
             <div class="links">
-                <a class="click" href="/search">Find a Jam Buddy!</a>
-                <a class="click" href="#">Messages</a>
+                <a class="click" href="/search">Find a Jam Buddy!</a> || 
                 <a class="click" href="/logout">Logout</a>
             </div>
-        </div>
         <div class="left-side">
             <h3>Profile</h3>
             <div class="user-info">
@@ -36,7 +33,7 @@
             <div class="user-info">
                 <p>Instruments: {{ user.instrument }}</p>
             </div>
-            <a href="update/instrument/{{ user.id }}">Edit Instruments</a>
+            <a href="update/instrument">Edit Instruments</a>
         </div>
     </div>
 </body>

@@ -28,15 +28,14 @@
                 </tr>
             </thead>
             <tbody>
-                {% for user in users %}
 
+                {% for user in users %}
                 <tr>
                     <td class="table">{{user.username}}</td>
                     <td class="table">{{user.state}}</td>
-                    <td class="table"></td>
-                    <td class="table"></td>
-                    <td class="table"><a href="/show/{{ user.id }}">View</a>
-                        <a href="/edit/{{ car.id }}">Message</a> <a href="/delete/{{ car.id }}">Like</a></td>
+                    <td class="table">{{user.instrument}}</td>
+                    <td class="table">{{user.years}}</td>
+                    <td class="table"><a href="/view/{{ user.id }}">View</a>
                     
                 </tr>
                 {% endfor %}

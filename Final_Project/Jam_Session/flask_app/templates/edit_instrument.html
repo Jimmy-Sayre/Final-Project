@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="insruments">
-            <h3>Musicians ready to jam!</h3>
+            <h3>Edit/Add Instrumnts!<h3>
             <table class="table">
                 <thead class="table">
                     <tr>
@@ -29,19 +29,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for user in userss %}
+                    {% for instrument in instruments %}
 
                     <tr>
-                        <td class="table">{{instrument.user}}</td>
-                        <td class="table">{{instruments.years}}</td>
-                        <td class="table"><a href="/delete/{{ car.id }}">Delete</a></td>
+                        <td class="table"></td>
+                        <td class="table"></td>
+                        <td class="table"><a href="/remove">Delete</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <p>
                 <form action="/update/instruments" method="post" class="form"></form>
-                    <select name="instrument" id="instrument" value="{{instrument.user}}">
+                    <select name="instrument" id="instrument" value="">
                         <option value="select">Select An Instrument</option>
                         <option value="guitar">Guitar</option>
                         <option value="bass_guitar">Bass guitar</option>
@@ -51,7 +51,7 @@
                         <option value="saxophone">Saxophone</option>
                         <option value="piano">Piano</option>
                     </select>
-                    <select name="years" id="years" value="{{instrument.years}}">
+                    <select name="years" id="years" value="">
                         <option value="years">Years Of Experience</option>
                         <option value="0">0</option>
                         <option value="1">1</option>

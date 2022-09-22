@@ -92,8 +92,9 @@ def guest():
 def search():
     if 'user_id' not in session:
         return redirect('/logout')
-    user = User.get_all()
-    return render_template("search.html", user = user )
+    instruments = Instrument.get_all_instruments()
+    users = User.get_all()
+    return render_template("search.html", users = users, instruments=instruments )
 
 @app.route('/view/<int:id>')
 def view(id):
@@ -109,3 +110,4 @@ def delete(id):
     }
     User.delete_user(data)
     return redirect('/logout')
+

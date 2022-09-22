@@ -10,20 +10,31 @@
 <body>
     <div class="container">
         <div class="welcome">
-            <h1>Jam Session</h1>
+            <h1 class="jam">Jam Session</h1>
         </div>
         <div class="content">
             <div class="pictures">
                 <img src="{{ url_for('static', filename='pictures/acoustic_guitar.jpg') }}" alt="Acoustic Guitar">
-
+                <img src="{{ url_for('static', filename='pictures/bass_guitar.jpg') }}" alt="Bass Guitar">
+                <img src="{{ url_for('static', filename='pictures/drums.jpg') }}" alt="Drums">
             </div>
             <div class="info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempore eos velit!
+                <p>A place for musicians to meet<br>
+                other local musicians for a<br>
+            jam session!</p>
+            <p>It's not always easy to find other<br>
+            people with your same skill level.<br>
+            Jam session is the place to make music,<br>
+            make friends, or even create a band!</p>
             </div>
-            <div class="links">
-                <a href="/register">Signup/Login</a>
-                <p>||</p>
+            <div class="intro-links">
+                <a href="/register">Signup/Login</a> || 
                 <a href="/guest">Guest View</a>
+            </div>
+            <div class="pictures">
+                <img src="{{ url_for('static', filename='pictures/trumpet.jpg') }}" alt="Trumpet">
+                <img src="{{ url_for('static', filename='pictures/trombone.jpg') }}" alt="Trombone">
+                <img src="{{ url_for('static', filename='pictures/saxophone.jpg') }}" alt="Saxophone">
             </div>
         </div>
     </div>
