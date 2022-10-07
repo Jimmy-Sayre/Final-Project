@@ -18,10 +18,10 @@
                 <a class="click" href="/logout">Logout</a>
             </div>
         </div>
-        <div class="insruments">
-            <h3>Edit/Add Instrumnts!<h3>
+        <div class="instruments">
+            <h3>Edit/Add Instruments!<h3>
             <table class="table">
-                <thead class="table">
+                <thead class="table">Edit
                     <tr>
                         <th class="table">Instrument</th>
                         <th class="table">Years of Experience</th>
@@ -30,18 +30,17 @@
                 </thead>
                 <tbody>
                     {% for instrument in instruments %}
-
                     <tr>
-                        <td class="table"></td>
-                        <td class="table"></td>
+                        <td class="table">{{instrument.instrument}}</td>
+                        <td class="table">{{instrument.years}}</td>
                         <td class="table"><a href="/remove">Delete</a></td>
-                    </tr>
+                    </tr>}
                     {% endfor %}
                 </tbody>
             </table>
             <p>
-                <form action="/update/instruments" method="post" class="form"></form>
-                    <select name="instrument" id="instrument" value="">
+                <form action="/update/instruments/{{ instrument.user_id }}" method="post" class="form"></form>
+                    <select name="instrument" id="instrument" value="instrument">
                         <option value="select">Select An Instrument</option>
                         <option value="guitar">Guitar</option>
                         <option value="bass_guitar">Bass guitar</option>
@@ -51,7 +50,7 @@
                         <option value="saxophone">Saxophone</option>
                         <option value="piano">Piano</option>
                     </select>
-                    <select name="years" id="years" value="">
+                    <select name="years" id="years" value="years">
                         <option value="years">Years Of Experience</option>
                         <option value="0">0</option>
                         <option value="1">1</option>

@@ -94,7 +94,7 @@ def search():
         return redirect('/logout')
     instruments = Instrument.get_all_instruments()
     users = User.get_all()
-    return render_template("search.html", users = users, instruments=instruments )
+    return render_template("search.html", users =zip(users, instruments) )
 
 @app.route('/view/<int:id>')
 def view(id):

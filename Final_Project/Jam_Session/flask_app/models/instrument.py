@@ -12,7 +12,13 @@ class Instrument:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
-        self.user = None
+        self.username = None
+        self.first_name = None
+        self.last_name = None
+        self.email = None
+        self.password = None
+        self.state = None
+        self.zip_code = None
 
 
     @classmethod
@@ -50,7 +56,7 @@ class Instrument:
 
     @classmethod
     def save(cls, data):
-        query="INSERT INTO intruments (instrument, years, user_id) VALUES (%(instrument)s, %(user_id)s)"
+        query="INSERT INTO intruments (instrument, years, user_id) VALUES (%(instrument)s, %(years)s, %(user_id)s)"
         result = connectToMySQL(db).query_db(query,data)
         return result
 
@@ -66,5 +72,5 @@ class Instrument:
 
     @classmethod
     def remove():
-        query = 'DELETE FROM instruments where id = %(id)s'
+        query = 'DELETE FROM instruments where user_id = %(user_id)s'
         return connectToMySQL(db).query_db(query)
